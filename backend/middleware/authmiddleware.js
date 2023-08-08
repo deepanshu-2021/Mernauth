@@ -3,7 +3,6 @@ import AsyncHandler from "express-async-handler";
 import { User } from "../user/User.js";
 const protect = AsyncHandler(async (req, res, next) => {
   let token = req.cookies.jwt;
-  console.log(req.cookies.jwt + "helllo");
   if (token) {
     try {
       const decode = Jwt.verify(token, process.env.SECRET_KEY);

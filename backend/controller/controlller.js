@@ -2,6 +2,7 @@ import AsyncHandler from "express-async-handler";
 import Jwt from "jsonwebtoken";
 import { User } from "../user/User.js";
 import gentratingtoken from "../util/tokengenration.js";
+import mongoose, { Mongoose } from "mongoose";
 const userAuth = AsyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
   const user = await User.findOne({ email });
@@ -17,7 +18,6 @@ const userAuth = AsyncHandler(async (req, res) => {
   }
 });
 const userReg = AsyncHandler(async (req, res) => {
-  console.log("");
   const { name, email, password } = req.body;
   const Userexist = await User.findOne({ email });
   if (Userexist) {
@@ -35,7 +35,6 @@ const userReg = AsyncHandler(async (req, res) => {
 });
 const userProfile = AsyncHandler(async (req, res) => {
   let token = req.cookies.jwt;
-  console.log(req.cookies.jwt);
   let decode = Jwt.verify(token, process.env.SECRET_KEY);
   let user = await User.findById(decode.userid);
   res.status(201).json({
@@ -44,6 +43,7 @@ const userProfile = AsyncHandler(async (req, res) => {
   });
 });
 const userLogout = AsyncHandler(async (req, res) => {
+  console.log("logout");
   res.cookie("jwt", "", {
     httpOnly: true,
     expires: new Date(0),
@@ -71,4 +71,23 @@ const userUpdate = AsyncHandler(async (req, res) => {
     throw new Error("invaild details!");
   }
 });
-export { userAuth, userLogout, userProfile, userReg, userUpdate };
+
+const userDel = AsyncHandler(async (req, res) => {
+  let token = req.cookies.jwt;
+  if (token) {
+    let decode = Jwt.decode(token, process.env.SECRET_KEY);
+    console.log(decode);
+    let result = await User.deleteOne({ _id: decode.userid });
+    res.cookie("jwt", "", {
+      httpOnly: true,
+      expires: new Date(0),
+    });
+    res.status(201).json({
+      message: "delete user",
+    });
+  } else {
+    console.log("delete");
+    throw Error("user nahi hai");
+  }
+});
+export { userAuth, userLogout, userProfile, userReg, userUpdate, userDel };
