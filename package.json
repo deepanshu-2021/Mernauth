@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "endgines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node ./backend/server.js",
-    "server": "nodemon ./backend/server.js",
-    "client": "npm run dev --prefix frontend",
-    "dev": "concurrently \"npm run client\" \"npm run server\""
+    "server": "nodemon ./backend/server.js"
   },
   "keywords": [],
   "author": "",
