@@ -11,7 +11,6 @@ const Updateprofile = () => {
   let [namewaring, setnamewaring] = useState("");
   let [passwordwaring, setpasswordwaring] = useState("");
   let [emailwaring, setemailwaring] = useState("");
-  let [seepassword, setseepassword] = useState("password");
   const senddetails = async () => {
     if (Password.length < 8) {
       return;

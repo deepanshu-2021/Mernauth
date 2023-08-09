@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import axios, { isCancel, AxiosError } from "axios";
+import axios from "axios";
 import { useNavigate } from "react-router";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useContext } from "react";
 import { MyContext } from "../contex/authcontext";
 const Signupbox = () => {
