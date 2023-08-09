@@ -12,7 +12,7 @@ const Userprofile = () => {
     try {
       const token = Cookies.get("jwt");
       console.log(token);
-      const res = await axios.get("http://localhost:3000/api/users/profile", {
+      const res = await axios.get(import.meta.env.VITE_API + "profile", {
         withCredentials: true,
       });
       let { name, email } = res.data;

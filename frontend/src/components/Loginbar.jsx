@@ -8,7 +8,7 @@ const Loginbar = () => {
   const logout = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/users/logout",
+        import.meta.env.VITE_API + "logout",
         {},
         {
           withCredentials: true,
@@ -22,7 +22,7 @@ const Loginbar = () => {
   };
   const deleteUser = async () => {
     try {
-      let res = await axios.delete("http://localhost:3000/api/users/delete", {
+      let res = await axios.delete(import.meta.env.VITE_API + "delete", {
         withCredentials: true,
       });
       console.log(res.data);

@@ -5,7 +5,7 @@ function Mainbox() {
   const logout = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/users/logout",
+        import.meta.env.VITE_API + "logout",
         {},
         {
           withCredentials: true,
@@ -16,7 +16,6 @@ function Mainbox() {
     }
   };
   useEffect(() => {
-    console.log("afadsf");
     logout();
   }, []);
   return (

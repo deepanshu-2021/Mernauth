@@ -17,16 +17,12 @@ const Signinbox = () => {
     }
     let details = { email: Email, password: Password };
     try {
-      let res = await axios.post(
-        "http://localhost:3000/api/users/auth",
-        details,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
+      let res = await axios.post(import.meta.env.VITE_API + "auth", details, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
       setauth(true);
       navigate("/users/login");
     } catch (e) {

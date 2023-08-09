@@ -17,13 +17,9 @@ const Updateprofile = () => {
     }
     let details = { name: Name, email: Email, password: Password };
     try {
-      let res = await axios.put(
-        "http://localhost:3000/api/users/profile",
-        details,
-        {
-          withCredentials: true,
-        }
-      );
+      let res = await axios.put(import.meta.env.VITE_API + "profile", details, {
+        withCredentials: true,
+      });
       navigate("/users/profile");
       console.log("hello");
     } catch (e) {
