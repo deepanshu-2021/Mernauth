@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useContext } from "react";
-import { MyContext } from "../contex/Authcontext";
+import { MyContext } from "../contex/authcontext";
 import { BsCheck2Circle } from "react-icons/bs";
 const Succesfullogin = () => {
   let [auth, setauth] = useContext(MyContext);

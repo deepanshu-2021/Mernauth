@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { BsCheck2Circle } from "react-icons/bs";
-import { MyContext } from "../contex/Authcontext";
+import { MyContext } from "../contex/authcontext";
 import { set } from "mongoose";
 
 const Logout = () => {
