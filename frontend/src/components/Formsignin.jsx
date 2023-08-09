@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios, { isCancel, AxiosError } from "axios";
 import { useNavigate } from "react-router";
-import { MyContext } from "../contex/authcontext";
+import { MyContext } from "../contex/Authcontext";
 const Signinbox = () => {
   let navigate = useNavigate();
   let [wrong, setwrong] = useState("");

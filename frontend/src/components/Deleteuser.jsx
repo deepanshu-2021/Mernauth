@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useContext } from "react";
 import { BiUserX } from "react-icons/bi";
 import { useNavigate } from "react-router";
-import { MyContext } from "../contex/authcontext";
+import { MyContext } from "../contex/Authcontext";
 const Deleteuser = () => {
   const navigate = useNavigate();
   const [auth, setauth] = useContext(MyContext);

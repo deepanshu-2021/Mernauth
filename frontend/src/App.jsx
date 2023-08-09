@@ -9,7 +9,7 @@ import Userprofile from "./components/Userprofile";
 import Logout from "./components/Logout";
 import Deleteuser from "./components/Deleteuser";
 import Updateprofile from "./components/Updateprofile";
-import { MyContextProvider } from "./contex/authcontext";
+import { MyContextProvider } from "./contex/Authcontext";
 import RouteProtection from "./protection/RouteProtection";
 function App() {
   return (
