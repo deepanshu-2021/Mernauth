@@ -6,7 +6,7 @@ import Signupbox from "./components/signup";
 import Loginbar from "./components/Loginbar";
 import Succesfullogin from "./components/Succesfullogin";
 import Userprofile from "./components/Userprofile";
-import Logout from "./components/logout";
+import Logout from "./components/Logout";
 import Deleteuser from "./components/Deleteuser";
 import Updateprofile from "./components/Updateprofile";
 import { MyContextProvider } from "./contex/authcontext";
