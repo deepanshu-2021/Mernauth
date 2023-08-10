@@ -5,7 +5,7 @@ function Mainbox() {
   const logout = async () => {
     try {
       const res = await axios.post(
-        import.meta.env.VITE_API + "logout",
+        process.env.REACT_APP_API + "logout",
         {},
         {
           withCredentials: true,

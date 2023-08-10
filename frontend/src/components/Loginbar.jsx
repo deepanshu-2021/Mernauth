@@ -22,7 +22,7 @@ const Loginbar = () => {
   };
   const deleteUser = async () => {
     try {
-      let res = await axios.delete(import.meta.env.VITE_API + "delete", {
+      let res = await axios.delete(process.env.REACT_APP_API + "delete", {
         withCredentials: true,
       });
       console.log(res.data);

@@ -20,7 +20,7 @@ const Signupbox = () => {
     }
     let details = { name: Name, email: Email, password: Password };
     try {
-      let res = await axios.post(import.meta.env.VITE_API, details, {
+      let res = await axios.post(process.env.REACT_APP_API, details, {
         withCredentials: true,
       });
       setauth(true);

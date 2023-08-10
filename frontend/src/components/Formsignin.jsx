@@ -17,7 +17,7 @@ const Signinbox = () => {
     }
     let details = { email: Email, password: Password };
     try {
-      let res = await axios.post(import.meta.env.VITE_API + "auth", details, {
+      let res = await axios.post(process.env.REACT_APP_API + "auth", details, {
         headers: {
           "Content-Type": "application/json",
         },
