@@ -12,8 +12,8 @@ let port = process.env.PORT || 3000;
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5000",
-    credentials:true
+    origin: "https://celadon-crumble-e25492.netlify.app",
+    credentials: true,
   })
 );
 mongodb();
