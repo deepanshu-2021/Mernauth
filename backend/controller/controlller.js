@@ -43,7 +43,6 @@ const userProfile = AsyncHandler(async (req, res) => {
   });
 });
 const userLogout = AsyncHandler(async (req, res) => {
-  console.log("logout");
   res.cookie("jwt", "", {
     httpOnly: true,
     expires: new Date(0),
