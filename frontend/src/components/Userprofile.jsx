@@ -12,9 +12,12 @@ const Userprofile = () => {
     try {
       const token = Cookies.get("jwt");
       console.log(token);
-      const res = await axios.get(process.env.REACT_APP_API + "profile", {
-        withCredentials: true,
-      });
+      const res = await axios.get(
+        "https://mernauth-x9v6.onrender.com/api/users/profile",
+        {
+          withCredentials: true,
+        }
+      );
       let { name, email } = res.data;
       setuserName(`User Name:${name}`);
       setuserEmail(`User Email:${email}`);

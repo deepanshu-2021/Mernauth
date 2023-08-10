@@ -17,17 +17,20 @@ const Signinbox = () => {
     }
     let details = { email: Email, password: Password };
     try {
-      let res = await axios.post(process.env.REACT_APP_API + "auth", details, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      });
+      let res = await axios.post(
+        "https://mernauth-x9v6.onrender.com/api/users/auth",
+        details,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
       setauth(true);
       navigate("/users/login");
     } catch (e) {
       setwrong("wrong details");
-      console.log(e.message);
     }
   };
   return (

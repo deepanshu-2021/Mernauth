@@ -5,7 +5,7 @@ function Mainbox() {
   const logout = async () => {
     try {
       const res = await axios.post(
-        process.env.REACT_APP_API + "logout",
+        "https://mernauth-x9v6.onrender.com/api/users/logout",
         {},
         {
           withCredentials: true,

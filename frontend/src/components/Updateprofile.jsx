@@ -18,7 +18,7 @@ const Updateprofile = () => {
     let details = { name: Name, email: Email, password: Password };
     try {
       let res = await axios.put(
-        process.env.REACT_APP_API + "profile",
+        "https://mernauth-x9v6.onrender.com/api/users/profile",
         details,
         {
           withCredentials: true,

@@ -8,7 +8,7 @@ const Loginbar = () => {
   const logout = async () => {
     try {
       const res = await axios.post(
-        import.meta.env.VITE_API + "logout",
+        "https://mernauth-x9v6.onrender.com/api/users/logout",
         {},
         {
           withCredentials: true,
@@ -22,9 +22,12 @@ const Loginbar = () => {
   };
   const deleteUser = async () => {
     try {
-      let res = await axios.delete(process.env.REACT_APP_API + "delete", {
-        withCredentials: true,
-      });
+      let res = await axios.delete(
+        "https://mernauth-x9v6.onrender.com/api/users/delete",
+        {
+          withCredentials: true,
+        }
+      );
       console.log(res.data);
     } catch (e) {
       console.log(e);

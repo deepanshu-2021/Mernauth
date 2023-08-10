@@ -20,9 +20,13 @@ const Signupbox = () => {
     }
     let details = { name: Name, email: Email, password: Password };
     try {
-      let res = await axios.post(process.env.REACT_APP_API, details, {
-        withCredentials: true,
-      });
+      let res = await axios.post(
+        "https://mernauth-x9v6.onrender.com/api/users/",
+        details,
+        {
+          withCredentials: true,
+        }
+      );
       setauth(true);
       navigate("/users/login");
     } catch (e) {
