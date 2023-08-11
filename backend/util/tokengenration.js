@@ -5,7 +5,7 @@ const gentratingtoken = (res, userid) => {
   });
   res.cookie("jwt", token, {
     httpOnly: true,
-    sameSite: None,
+    sameSite: "None",
     domain: "netlify.app",
     path: "/",
     strict: process.env.NODE_ENV !== "development",
