@@ -8,7 +8,7 @@ export default defineConfig({
     port: 5000,
     proxy: {
       "/api": {
-        target: "http://localhost:3000",
+        target: "https://mernauth-x9v6.onrender.com/api/users/",
         changeOrigin: true,
       },
     },
