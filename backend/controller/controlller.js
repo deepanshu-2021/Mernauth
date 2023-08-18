@@ -2,11 +2,11 @@ import AsyncHandler from "express-async-handler";
 import Jwt from "jsonwebtoken";
 import { User } from "../user/User.js";
 import gentratingtoken from "../util/tokengenration.js";
-import mongoose, { Mongoose } from "mongoose";
 const userAuth = AsyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
   const user = await User.findOne({ email });
   if (user && (await user.matchPassword(password))) {
+    console.log("auth");
     gentratingtoken(res, user._id);
     res.status(201).json({
       _id: user._id,
