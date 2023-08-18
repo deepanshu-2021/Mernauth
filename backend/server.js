@@ -16,17 +16,6 @@ app.use(
     credentials: true,
   })
 );
-app.options("*", (req, res) => {
-  // Set the appropriate CORS headers
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://celadon-crumble-e25492.netlify.app"
-  );
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.status(204).send();
-});
 mongodb();
 app.use(json());
 app.use(bodyParser.urlencoded({ extended: true }));
