@@ -1,5 +1,4 @@
 const notfound = (req, res, next) => {
-  console.log("hello");
   const error = new Error(`not found ${req.orignalUrl}`);
   res.status(404);
   next(error);
@@ -8,7 +7,7 @@ const errorHandler = (error, req, res, next) => {
   let statusCode = res.statusCode === 200 ? 500 : res.statusCode;
   //console.log();
   let message = error.message;
-  console.log(error.name);
+  console.log("erromiddleware");
   if (error.name === "CastError" && error.kind === "ObjectId") {
     message = "User already exist!";
     statusCode = 404;
