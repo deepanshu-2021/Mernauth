@@ -12,7 +12,7 @@ let port = process.env.PORT || 3000;
 const app = express();
 app.use(
   cors({
-    origin: "https://celadon-crumble-e25492.netlify.app",
+    origin: "*",
     credentials: true,
   })
 );
